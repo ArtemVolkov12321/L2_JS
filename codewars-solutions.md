@@ -1,8 +1,8 @@
 Первая задача
 
-function hasTwoCubeSums(n) {
-    const ways = [];
-    const max = Math.floor(Math.cbrt(n));
+    function hasTwoCubeSums(n) {
+        const ways = [];
+        const max = Math.floor(Math.cbrt(n));
     
     for (let a = 1; a <= max; a++) {
         for (let b = a + 1; b <= max; b++) {
@@ -30,31 +30,31 @@ function hasTwoCubeSums(n) {
     }
     
     return false;
-}
+    }
 
-console.log(hasTwoCubeSums(1729)); // true
-console.log(hasTwoCubeSums(42));   // false
-console.log(hasTwoCubeSums(4104)); // true
-console.log(hasTwoCubeSums(13832)); // true
-console.log(hasTwoCubeSums(100));   // false
+    console.log(hasTwoCubeSums(1729)); // true
+    console.log(hasTwoCubeSums(42));   // false
+    console.log(hasTwoCubeSums(4104)); // true
+    console.log(hasTwoCubeSums(13832)); // true
+    console.log(hasTwoCubeSums(100));   // false
 
 Вторая задача
 
-function ipv4Parser(ip, subnet) {
-    const ipParts = ip.split('.').map(Number);
-    const subnetParts = subnet.split('.').map(Number);
+    function ipv4Parser(ip, subnet) {
+        const ipParts = ip.split('.').map(Number);
+        const subnetParts = subnet.split('.').map(Number);
     
     const network = ipParts.map((octet, i) => octet & subnetParts[i]);
     const host = ipParts.map((octet, i) => octet - network[i]);
     
     return [network.join('.'), host.join('.')];
-}
+    }
 
 Третья задача
 
-function whatCentury(year) {
-    const yearNum = parseInt(year);
-    let century = Math.ceil(yearNum / 100);
+    function whatCentury(year) {
+        const yearNum = parseInt(year);
+        let century = Math.ceil(yearNum / 100);
     
     let suffix;
     if (century % 10 === 1 && century % 100 !== 11) {
@@ -68,20 +68,20 @@ function whatCentury(year) {
     }
     
     return century + suffix;
-}
+    }
 
-console.log(whatCentury("1999"));
-console.log(whatCentury("2011"));
-console.log(whatCentury("2154"));
-console.log(whatCentury("2259"));
-console.log(whatCentury("1124"));
-console.log(whatCentury("2000"));
+    console.log(whatCentury("1999"));
+    console.log(whatCentury("2011"));
+    console.log(whatCentury("2154"));
+    console.log(whatCentury("2259"));
+    console.log(whatCentury("1124"));
+    console.log(whatCentury("2000"));
 
 четвертая задача
 
-function findMissing(list) {
-    const step1 = list[1] - list[0];
-    const step2 = list[list.length - 1] - list[list.length - 2];
+    function findMissing(list) {
+        const step1 = list[1] - list[0];
+        const step2 = list[list.length - 1] - list[list.length - 2];
     
     let step;
     if (Math.abs(step1) < Math.abs(step2)) {
@@ -97,19 +97,19 @@ function findMissing(list) {
     }
     
     return list[0];
-}
+    }
 
-console.log(findMissing([1, 3, 5, 9, 11]));
-console.log(findMissing([1, 5, 7, 9, 11]));
-console.log(findMissing([1, 3, 7, 9, 11]));
-console.log(findMissing([2, 4, 6, 10, 12]));
-console.log(findMissing([10, 13, 16, 22, 25]));
+    console.log(findMissing([1, 3, 5, 9, 11]));
+    console.log(findMissing([1, 5, 7, 9, 11]));
+    console.log(findMissing([1, 3, 7, 9, 11]));
+    console.log(findMissing([2, 4, 6, 10, 12]));
+    console.log(findMissing([10, 13, 16, 22, 25]));
 
 пятая задача
 
-function primeFactors(n) {
-    let result = "";
-    let temp = n;
+    function primeFactors(n) {
+        let result = "";
+        let temp = n;
     
     let count = 0;
     while (temp % 2 === 0) {
@@ -136,32 +136,32 @@ function primeFactors(n) {
     }
     
     return result;
-}
+    }
 
-console.log(primeFactors(86240));
-console.log(primeFactors(7775460));
-console.log(primeFactors(7919));
-console.log(primeFactors(17));
-console.log(primeFactors(8));
-console.log(primeFactors(12));
+    console.log(primeFactors(86240));
+    console.log(primeFactors(7775460));
+    console.log(primeFactors(7919));
+    console.log(primeFactors(17));
+    console.log(primeFactors(8));
+    console.log(primeFactors(12));
 
 шестая задача
 
-function toWeirdCase(string) {
-    return string.split(' ')
-                 .map(word => 
-                     word.split('')
-                         .map((char, index) => 
-                             index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
-                         )
-                         .join('')
-                 )
-                 .join(' ');
-}
+    function toWeirdCase(string) {
+        return string.split(' ')
+                     .map(word => 
+                         word.split('')
+                             .map((char, index) => 
+                                 index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
+                             )
+                             .join('')
+                     )
+                     .join(' ');
+    }
 
-console.log(toWeirdCase("String"));
-console.log(toWeirdCase("Weird string case"));
-console.log(toWeirdCase("This is a test"));
-console.log(toWeirdCase("ABCD"));
-console.log(toWeirdCase("a"));
-console.log(toWeirdCase("ab"));
+    console.log(toWeirdCase("String"));
+    console.log(toWeirdCase("Weird string case"));
+    console.log(toWeirdCase("This is a test"));
+    console.log(toWeirdCase("ABCD"));
+    console.log(toWeirdCase("a"));
+    console.log(toWeirdCase("ab"));
